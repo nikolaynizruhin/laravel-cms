@@ -12,6 +12,9 @@
 
                         <div class="panel-body">
                             {{ $post->excerpt }}
+                            <p>
+                                <a href="{{ url('/posts/' . $post->id) }}"><small>Read more...</small></a>
+                            </p>
                         </div>
                     </div>
 
