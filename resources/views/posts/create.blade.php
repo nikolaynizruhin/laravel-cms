@@ -6,7 +6,6 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Create post</div>
-
                     <div class="panel-body">
                         <form method="post" action="/posts">
                             {{ csrf_field() }}
@@ -28,7 +27,6 @@
                             <button type="submit" class="btn btn-default">Submit</button>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
