@@ -10,6 +10,8 @@ class PostController extends Controller
 {
     /**
      * Create a new post controller instance.
+     *
+     * @return void
      */
     public function __construct()
     {
@@ -54,7 +56,7 @@ class PostController extends Controller
 
         Auth::user()->posts()->create($request->all());
 
-        redirect('/posts');
+        return redirect('/posts');
     }
 
     /**
@@ -89,10 +91,14 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $this->validate($request, [
-            'title' => 'required|unique:posts|max:255',
+            'title' => 'required|max:255',
             'excerpt' => 'required|max:255',
             'body' => 'required',
         ]);
+
+        $post->update($request->all());
+
+        return redirect('/posts');
     }
 
     /**
