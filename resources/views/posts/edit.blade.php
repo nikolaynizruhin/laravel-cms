@@ -51,6 +51,14 @@
 
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
+                        <form action="{{ url('/posts/' . $post->id) }}" method="POST">
+
+                            {{ method_field('DELETE') }}
+
+                            {{ csrf_field() }}
+
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
