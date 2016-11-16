@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -50,6 +51,10 @@ class PostController extends Controller
             'excerpt' => 'required|max:255',
             'body' => 'required',
         ]);
+
+        Auth::user()->posts()->create($request->all());
+
+        redirect('/posts');
     }
 
     /**
