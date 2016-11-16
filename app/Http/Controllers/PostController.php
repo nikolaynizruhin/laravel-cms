@@ -37,7 +37,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $this->validate($request, [
+            'title' => 'required|unique:posts|max:255',
+            'excerpt' => 'required|max:255',
+            'body' => 'required',
+        ]);
     }
 
     /**
