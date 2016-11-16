@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
+     * Create a new post controller instance.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the posts.
      *
      * @return \Illuminate\Http\Response
