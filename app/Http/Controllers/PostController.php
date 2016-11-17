@@ -56,7 +56,7 @@ class PostController extends Controller
 
         Auth::user()->posts()->create($request->all());
 
-        return redirect('/posts');
+        return redirect('/home');
     }
 
     /**
@@ -98,7 +98,7 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect('/posts');
+        return redirect('/home');
     }
 
     /**
@@ -111,6 +111,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect('/posts');
+        return redirect('/home');
     }
 }
