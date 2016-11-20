@@ -24,6 +24,8 @@
 
                 @endforelse
 
+                    {{ $posts->links() }}
+
             </div>
         </div>
     </div>
