@@ -90,6 +90,8 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        $this->authorize('update', $post);
+
         $this->validate($request, [
             'title' => 'required|max:255',
             'excerpt' => 'required',
@@ -109,6 +111,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $this->authorize('delete', $post);
+
         $post->delete();
 
         return redirect('/home');
