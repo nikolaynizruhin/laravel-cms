@@ -8,10 +8,10 @@
                 @forelse ($posts as $post)
 
                     <div class="panel panel-default">
-                        <div class="panel-heading">{{ $post->title }}</div>
+                        <div class="panel-heading"><h4>{{ $post->title }}</h4></div>
 
                         <div class="panel-body">
-                            {{ $post->excerpt }}
+                            {!! $post->excerpt !!}
                             <p>
                                 <a href="{{ url('/posts/' . $post->id) }}"><small>Read more...</small></a>
                             </p>

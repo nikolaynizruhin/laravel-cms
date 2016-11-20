@@ -50,7 +50,7 @@ class PostController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|unique:posts|max:255',
-            'excerpt' => 'required|max:255',
+            'excerpt' => 'required',
             'body' => 'required',
         ]);
 
@@ -92,7 +92,7 @@ class PostController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:255',
-            'excerpt' => 'required|max:255',
+            'excerpt' => 'required',
             'body' => 'required',
         ]);
 
