@@ -13,8 +13,10 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Title</th>
-                                <th class="text-right">Edit</th>
-                                <th class="text-right">Delete</th>
+                                <th>Created</th>
+                                <th>Updated</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         @forelse ($posts as $post)
@@ -25,10 +27,16 @@
                                 <td>
                                     {{ $post->title }}
                                 </td>
-                                <td class="text-right">
+                                <td>
+                                    {{ $post->created_at }}
+                                </td>
+                                <td>
+                                    {{ $post->updated_at }}
+                                </td>
+                                <td>
                                     <a class="btn btn-primary btn-xs" href="{{ url('/posts/' . $post->id . '/edit') }}" role="button">Edit</a>
                                 </td>
-                                <td class="text-right">
+                                <td>
                                     <form action="{{ url('/posts/' . $post->id) }}" method="POST">
 
                                         {{ method_field('DELETE') }}
