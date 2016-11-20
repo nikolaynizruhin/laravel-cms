@@ -51,6 +51,9 @@
                             <p>No posts</p>
                         @endforelse
                     </table>
+
+                    {{ $posts->links() }}
+
                 </div>
             </div>
         </div>
