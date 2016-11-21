@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Http\Requests\UpdateBlogPost;
+use App\Http\Requests\StoreBlogPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,16 +45,16 @@ class PostController extends Controller
     /**
      * Store a newly created post in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreBlogPost  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBlogPost $request)
     {
-        $this->validate($request, [
-            'title' => 'required|unique:posts|max:255',
-            'excerpt' => 'required',
-            'body' => 'required',
-        ]);
+//        $this->validate($request, [
+//            'title' => 'required|unique:posts|max:255',
+//            'excerpt' => 'required',
+//            'body' => 'required',
+//        ]);
 
         Auth::user()->posts()->create($request->all());
 
@@ -84,19 +86,19 @@ class PostController extends Controller
     /**
      * Update the specified post in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  UpdateBlogPost  $request
      * @param  Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdateBlogPost $request, Post $post)
     {
         $this->authorize('update', $post);
 
-        $this->validate($request, [
-            'title' => 'required|max:255',
-            'excerpt' => 'required',
-            'body' => 'required',
-        ]);
+//        $this->validate($request, [
+//            'title' => 'required|max:255',
+//            'excerpt' => 'required',
+//            'body' => 'required',
+//        ]);
 
         $post->update($request->all());
 
