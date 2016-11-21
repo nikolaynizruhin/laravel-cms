@@ -16,7 +16,7 @@
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                                 <label for="title">Title</label>
 
-                                <input type="text" class="form-control" id="title" name="title" value="{{ old('title') ? old('title') : $post->title }}" required autofocus>
+                                <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $post->title) }}" required autofocus>
 
                                 @if ($errors->has('title'))
                                     <span class="help-block">
@@ -28,7 +28,7 @@
                             <div class="form-group{{ $errors->has('excerpt') ? ' has-error' : '' }}">
                                 <label for="excerpt">Excerpt</label>
 
-                                <textarea class="form-control" id="excerpt" rows="2" name="excerpt" required>{{ old('excerpt') ? old('excerpt') : $post->excerpt }}</textarea>
+                                <textarea class="form-control" id="excerpt" rows="2" name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</textarea>
 
                                 @if ($errors->has('excerpt'))
                                     <span class="help-block">
@@ -40,7 +40,7 @@
                             <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                                 <label for="body">Body</label>
 
-                                <textarea class="form-control" id="body" rows="5" name="body" required>{{ old('body') ? old('body') : $post->body }}</textarea>
+                                <textarea class="form-control" id="body" rows="5" name="body" required>{{ old('body', $post->body) }}</textarea>
 
                                 @if ($errors->has('body'))
                                     <span class="help-block">
