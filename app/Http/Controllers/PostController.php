@@ -50,12 +50,6 @@ class PostController extends Controller
      */
     public function store(StoreBlogPost $request)
     {
-//        $this->validate($request, [
-//            'title' => 'required|unique:posts|max:255',
-//            'excerpt' => 'required',
-//            'body' => 'required',
-//        ]);
-
         Auth::user()->posts()->create($request->all());
 
         return redirect('/home');
@@ -93,12 +87,6 @@ class PostController extends Controller
     public function update(UpdateBlogPost $request, Post $post)
     {
         $this->authorize('update', $post);
-
-//        $this->validate($request, [
-//            'title' => 'required|max:255',
-//            'excerpt' => 'required',
-//            'body' => 'required',
-//        ]);
 
         $post->update($request->all());
 
