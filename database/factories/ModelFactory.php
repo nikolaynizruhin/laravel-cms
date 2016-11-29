@@ -22,11 +22,22 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->unique()->word,
+    ];
+});
+
 $factory->define(App\Post::class, function (Faker\Generator $faker) {
     return [
-        'user_id' => 2,
-        'title' => $faker->text(),
-        'excerpt' => $faker->text(300),
+        'user_id' => function () {
+            return factory(App\User::class)->create()->id;
+        },
+        'category_id' => function () {
+            return factory(App\Category::class)->create()->id;
+        },
+        'title' => $faker->sentence(),
+        'excerpt' => $faker->paragraph,
         'body' => $faker->text(1000),
     ];
 });
