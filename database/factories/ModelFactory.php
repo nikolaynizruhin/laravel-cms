@@ -28,6 +28,12 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->unique()->word,
+    ];
+});
+
 $factory->define(App\Post::class, function (Faker\Generator $faker) {
     return [
         'user_id' => function () {
