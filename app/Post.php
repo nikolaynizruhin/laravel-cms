@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
@@ -41,7 +42,6 @@ class Post extends Model
         return $this->belongsTo('App\Category');
     }
 
-
     /**
      * The tags that belong to post.
      *
@@ -50,5 +50,40 @@ class Post extends Model
     public function tags()
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();
+    }
+
+    /**
+     * A post can have many comments.
+     *
+     * @return HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+    /**
+     * Load a threaded set of comments for the post.
+     *
+     * @return \App\CommentCollection
+     */
+    public function getThreadedComments()
+    {
+        return $this->comments()->with('owner')->get()->threaded();
+    }
+
+    /**
+     * Add a comment to the post.
+     *
+     * @param array $attributes
+     * @return Model
+     */
+    public function addComment(array $attributes)
+    {
+        $comment = (new Comment)->forceFill($attributes);
+
+        $comment->user_id = auth()->id();
+
+        return $this->comments()->save($comment);
     }
 }
