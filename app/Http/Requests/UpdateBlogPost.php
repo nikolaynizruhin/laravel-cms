@@ -26,7 +26,8 @@ class UpdateBlogPost extends FormRequest
         return [
             'title' => 'required|max:255',
             'excerpt' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'category_id' => 'required|numeric',
         ];
     }
 }

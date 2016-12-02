@@ -103,6 +103,10 @@ class PostController extends Controller
 
         $post->update($request->all());
 
+        $tags = $request->tags;
+
+        if ($tags) $post->tags()->sync($tags);
+
         return redirect('/home');
     }
 

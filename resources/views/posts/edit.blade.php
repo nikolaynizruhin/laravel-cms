@@ -72,7 +72,7 @@
 
                                 <select multiple="multiple" name="tags[]" class="form-control">
                                     @foreach ($tags as $tag)
-                                        <option value="{{ $tag->id }}">
+                                        <option value="{{ $tag->id }}" @if(in_array($tag->id, $post->tags()->pluck('id')->all())) selected @endif>
                                             {{ $tag->name }}
                                         </option>
                                     @endforeach
