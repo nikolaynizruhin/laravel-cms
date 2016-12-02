@@ -25,6 +25,24 @@
                                 @endif
                             </div>
 
+                            <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
+                                <label for="category_id">Category</label>
+
+                                <select name="category_id" class="form-control">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}" @if ($post->category->id == $category->id) selected @endif>
+                                            {{ $category->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('category_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('category_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
                             <div class="form-group{{ $errors->has('excerpt') ? ' has-error' : '' }}">
                                 <label for="excerpt">Excerpt</label>
 
@@ -45,6 +63,24 @@
                                 @if ($errors->has('body'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
+                                <label for="tags">Tags</label>
+
+                                <select multiple="multiple" name="tags[]" class="form-control">
+                                    @foreach ($tags as $tag)
+                                        <option value="{{ $tag->id }}">
+                                            {{ $tag->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('tags'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tags') }}</strong>
                                     </span>
                                 @endif
                             </div>

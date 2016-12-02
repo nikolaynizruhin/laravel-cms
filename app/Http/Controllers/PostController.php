@@ -41,7 +41,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create', ['categories' => Category::all(), 'tags' => Tag::all()]);
+        return view('posts.create', [
+            'categories' => Category::all(),
+            'tags' => Tag::all()
+        ]);
     }
 
     /**
@@ -80,7 +83,11 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('posts.edit', compact('post'));
+        return view('posts.edit', [
+            'post' => $post,
+            'categories' => Category::all(),
+            'tags' => Tag::all()
+        ]);
     }
 
     /**
