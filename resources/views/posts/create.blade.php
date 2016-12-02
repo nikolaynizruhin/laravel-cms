@@ -23,6 +23,22 @@
                                 @endif
                             </div>
 
+                            <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+                                <label for="category">Category</label>
+
+                                <select name="category" class="form-control">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('category'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('category') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
                             <div class="form-group{{ $errors->has('excerpt') ? ' has-error' : '' }}">
                                 <label for="excerpt">Excerpt</label>
 
@@ -47,6 +63,22 @@
                                 @if ($errors->has('body'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
+                                <label for="tags">Tags</label>
+
+                                <select multiple name="tags" class="form-control">
+                                    @foreach ($tags as $tag)
+                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('tags'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tags') }}</strong>
                                     </span>
                                 @endif
                             </div>

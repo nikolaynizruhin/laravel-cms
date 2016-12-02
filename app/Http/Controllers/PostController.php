@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use App\Http\Requests\UpdateBlogPost;
 use App\Http\Requests\StoreBlogPost;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,7 +41,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create', ['categories' => Category::all(), 'tags' => Tag::all()]);
     }
 
     /**
