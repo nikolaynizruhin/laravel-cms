@@ -72,7 +72,26 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show', compact('post'));
+        return view('posts.show', [
+            'post' => $post,
+            'comments' => $post->getThreadedComments()
+        ]);
+    }
+
+    /**
+     * Add a comment to the post.
+     *
+     * @param Post $post
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function addComment(Post $post)
+    {
+        $post->addComment([
+            'body' => request('body'),
+            'parent_id' => request('parent_id', null),
+        ]);
+
+        return back();
     }
 
     /**

@@ -12,7 +12,12 @@ class Comment extends Model
      *
      * @var array
      */
-    protected $fillable = ['body'];
+    protected $fillable = [
+        'user_id',
+        'post_id',
+        'parent_id',
+        'body',
+    ];
 
     /**
      * A comment has an owner.
