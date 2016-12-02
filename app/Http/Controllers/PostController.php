@@ -52,7 +52,11 @@ class PostController extends Controller
      */
     public function store(StoreBlogPost $request)
     {
-        Auth::user()->posts()->create($request->all());
+        $post = Auth::user()->posts()->create($request->all());
+
+        $tags = $request->tags;
+
+        if ($tags) $post->tags()->attach($tags);
 
         return redirect('/home');
     }

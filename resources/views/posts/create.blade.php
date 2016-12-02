@@ -23,18 +23,18 @@
                                 @endif
                             </div>
 
-                            <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                                <label for="category">Category</label>
+                            <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
+                                <label for="category_id">Category</label>
 
-                                <select name="category" class="form-control">
+                                <select name="category_id" class="form-control">
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
 
-                                @if ($errors->has('category'))
+                                @if ($errors->has('category_id'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('category') }}</strong>
+                                        <strong>{{ $errors->first('category_id') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -70,7 +70,7 @@
                             <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
                                 <label for="tags">Tags</label>
 
-                                <select multiple name="tags" class="form-control">
+                                <select multiple="multiple" name="tags[]" class="form-control">
                                     @foreach ($tags as $tag)
                                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                     @endforeach
