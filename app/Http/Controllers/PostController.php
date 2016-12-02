@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Post;
-use App\Http\Requests\UpdateBlogPost;
-use App\Http\Requests\StoreBlogPost;
 use App\Tag;
+use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UpdateBlogPost;
+use App\Http\Requests\StoreBlogPost;
 
 class PostController extends Controller
 {
