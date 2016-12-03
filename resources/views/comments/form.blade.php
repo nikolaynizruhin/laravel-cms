@@ -5,7 +5,9 @@
         <input type="hidden" name="parent_id" value="{{ $parentId }}">
     @endif
 
-    <textarea name="body" required></textarea>
+    <div class="form-group">
+        <textarea class="form-control" rows="3" name="body" required></textarea>
+    </div>
 
-    <button type="submit">Reply</button>
+    <button type="submit" class="btn btn-default">Reply</button>
 </form>

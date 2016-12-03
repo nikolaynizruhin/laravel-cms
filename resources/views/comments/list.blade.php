@@ -1,4 +1,4 @@
-<ul class="media-list">
+<ul>
     @foreach ($collection as $comment)
         @include ('comments.comment')
     @endforeach
