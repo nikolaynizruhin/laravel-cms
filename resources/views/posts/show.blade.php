@@ -21,7 +21,11 @@
 
                     <div class="panel-body">
 
-                        @include ('comments.list', ['collection' => $comments['root']])
+                        @if (isset($comments['root']))
+                            @include ('comments.list', ['collection' => $comments['root']])
+                        @else
+                            <p>NO COMMENTS</p>
+                        @endif
 
                         @if (Auth::check())
                             <p>Leave a Reply</p>

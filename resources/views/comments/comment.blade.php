@@ -1,9 +1,8 @@
-<li>
-    <p>{{ $comment->owner->name }} said...</p>
-
-    <p>
-        {{ $comment->body }}
-    </p>
+<li class="media">
+    <div class="media-body">
+        <h4 class="media-heading">{{ $comment->owner->name }} said...</h4>
+        <p>{{ $comment->body }}</p>
+    </div>
 
     @if (Auth::check())
         @include ('comments.form', ['parentId' => $comment->id])
