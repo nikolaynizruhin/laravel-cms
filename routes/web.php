@@ -24,3 +24,5 @@ Route::resource('posts', 'PostController');
 Route::post('posts/{post}/comments', 'PostController@addComment');
 
 Route::get('tags/{tag}', 'TagController@show');
+
+Route::get('users/{user}', 'UserController@show');

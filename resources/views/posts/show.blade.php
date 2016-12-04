@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>{{ $post->title }}
-                            <small>by {{ $post->user->name }} {{ $post->created_at->diffForHumans() }}</small>
+                            <small>by <a href="{{ url('/users/' . $post->user->id) }}">{{ $post->user->name }}</a> {{ $post->created_at->diffForHumans() }}</small>
                         </h4>
                     </div>
 
