@@ -6,7 +6,9 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>{{ $post->title }} <small>by {{ $post->user->name }}</small></h4>
+                        <h4>{{ $post->title }}
+                            <small>by {{ $post->user->name }} {{ $post->created_at->diffForHumans() }}</small>
+                        </h4>
                     </div>
 
                     <div class="panel-body">
