@@ -74,6 +74,7 @@ class PostController extends Controller
     {
         return view('posts.show', [
             'post' => $post,
+            'tags' => $post->tags,
             'comments' => $post->getThreadedComments()
         ]);
     }
