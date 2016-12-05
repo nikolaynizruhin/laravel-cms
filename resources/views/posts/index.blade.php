@@ -9,9 +9,20 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4>{{ $post->title }}
-                                <small>by <a href="{{ url('/users/' . $post->user->id) }}">{{ $post->user->name }}</a> {{ $post->created_at->diffForHumans() }}</small>
-                            </h4>
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="{{ url('/users/' . $post->user->id) }}">
+                                        <img class="media-object img-circle" src="{{ url('/uploads/avatars/' . $post->user->avatar) }}" height="32" width="32" alt="avatar">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="media-heading">
+                                        <a href="{{ url('/users/' . $post->user->id) }}">{{ $post->user->name }}</a><br>
+                                        <small>{{ $post->created_at->diffForHumans() }}</small>
+                                    </h5>
+                                </div>
+                            </div>
+                            <h4>{{ $post->title }}</h4>
                         </div>
 
                         <div class="panel-body">
