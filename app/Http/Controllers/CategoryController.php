@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
+use App\Category;
 use Illuminate\Http\Request;
 
-class TagController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Create a new tag controller instance.
@@ -18,20 +18,20 @@ class TagController extends Controller
     }
 
     /**
-     * Display the specified posts by tag.
+     * Display the specified posts by category.
      *
-     * @param  Tag  $tag
+     * @param  Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show(Category $category)
     {
-        $posts = $tag->posts()->paginate(5);
+        $posts = $category->posts()->paginate(5);
 
         return view('posts.index', compact('posts'));
     }
 
     /**
-     * Store a newly created tag in storage.
+     * Store a newly created category in storage.
      *
      * @param  Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -42,20 +42,20 @@ class TagController extends Controller
             'name' => 'required|unique:tags|max:255',
         ]);
 
-        Tag::create(['name' => $request->name]);
+        Category::create(['name' => $request->name]);
 
         return redirect('/home');
     }
 
     /**
-     * Remove the specified tag from storage.
+     * Remove the specified category from storage.
      *
-     * @param  Tag  $tag
+     * @param  Category  $category
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy(Tag $tag)
+    public function destroy(Category $category)
     {
-        $tag->delete();
+        $category->delete();
 
         return redirect('/home');
     }

@@ -23,10 +23,16 @@ Route::resource('posts', 'PostController');
 
 Route::post('posts/{post}/comments', 'PostController@addComment');
 
-Route::get('tags/{tag}', 'TagController@show');
-
 Route::get('users/{user}', 'UserController@show');
 
 Route::get('profile', 'UserController@profile');
 
 Route::post('profile', 'UserController@updateAvatar');
+
+Route::resource('tags', 'TagController', ['only' => [
+    'show', 'store', 'destroy'
+]]);
+
+Route::resource('categories', 'CategoryController', ['only' => [
+    'show', 'store', 'destroy'
+]]);

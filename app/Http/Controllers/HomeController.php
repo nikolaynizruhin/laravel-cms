@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,8 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Auth::user()->posts()->paginate(5);
+        $posts = Auth::user()->posts;
 
-        return view('home', compact('posts'));
+        $categories = Category::all();
+
+        $tags = Tag::all();
+
+        return view('home', compact('posts', 'categories', 'tags'));
     }
 }
