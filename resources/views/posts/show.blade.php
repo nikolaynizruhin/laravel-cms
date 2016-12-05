@@ -39,7 +39,7 @@
                         @else
                             <p>NO COMMENTS</p>
                         @endif
-
+                            <br>
                         @if (Auth::check())
                             @include ('comments.form')
                         @endif
