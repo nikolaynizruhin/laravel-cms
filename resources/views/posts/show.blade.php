@@ -41,8 +41,6 @@
                         @endif
 
                         @if (Auth::check())
-                            <p>Leave a Reply</p>
-
                             @include ('comments.form')
                         @endif
 
