@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +31,11 @@ class UserController extends Controller
     {
         $posts = $user->posts()->paginate(5);
 
-        return view('posts.index', compact('posts'));
+        $categories = Category::all();
+
+        $tags = Tag::all();
+
+        return view('posts.index', compact('posts', 'categories', 'tags'));
     }
 
     /**

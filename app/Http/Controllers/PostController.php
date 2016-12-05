@@ -31,7 +31,11 @@ class PostController extends Controller
     {
         $posts =  Post::latest()->paginate(5);
 
-        return view('posts.index', compact('posts'));
+        $categories = Category::all();
+
+        $tags = Tag::all();
+
+        return view('posts.index', compact('posts', 'categories', 'tags'));
     }
 
     /**
@@ -75,6 +79,8 @@ class PostController extends Controller
         return view('posts.show', [
             'post' => $post,
             'tags' => $post->tags,
+            'tagsAll' => Tag::all(),
+            'categories' => Category::all(),
             'comments' => $post->getThreadedComments()
         ]);
     }

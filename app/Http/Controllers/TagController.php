@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Tag;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,11 @@ class TagController extends Controller
     {
         $posts = $tag->posts()->paginate(5);
 
-        return view('posts.index', compact('posts'));
+        $categories = Category::all();
+
+        $tags = Tag::all();
+
+        return view('posts.index', compact('posts', 'categories', 'tags'));
     }
 
     /**

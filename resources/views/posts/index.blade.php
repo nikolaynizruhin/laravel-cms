@@ -31,6 +31,12 @@
                     {{ $posts->links() }}
 
             </div>
+
+            <div class="col-md-2">
+                @include ('widgets.categories')
+
+                @include('widgets.tags')
+            </div>
         </div>
     </div>
 @endsection
