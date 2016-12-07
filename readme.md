@@ -1,5 +1,5 @@
 # Laravel 5.3 CMS
-### Features:
+#### Features:
 - CRUD Posts
 - Full-text search
 - Categories
