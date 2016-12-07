@@ -72,6 +72,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ url('/home') }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                                     <li><a href="{{ url('/profile') }}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                                    <li><a href="{{ url('/posts') }}"><i class="fa fa-rss" aria-hidden="true"></i> Blog</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
