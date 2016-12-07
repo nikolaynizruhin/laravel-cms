@@ -44,6 +44,8 @@
                                     @include ('comments.form')
                                 </div>
                             </div>
+                        @else
+                            <p>You must be <a href="{{ url('/login') }}">logged in</a> to post a comment.</p>
                         @endif
 
                         @if (isset($comments['root']))
