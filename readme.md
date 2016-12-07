@@ -5,6 +5,7 @@
 - Categories
 - Nested comments
 - Tags
+- Pagination
 - Authorization
 - Authentication
 - User avatar
