@@ -33,17 +33,13 @@
                     <div class="panel-heading"><h4>Comments</h4></div>
 
                     <div class="panel-body">
-
-                        @if (isset($comments['root']))
-                            @include ('comments.list', ['collection' => $comments['root']])
-                        @else
-                            <p>NO COMMENTS</p>
-                        @endif
-                            <br>
                         @if (Auth::check())
                             @include ('comments.form')
                         @endif
 
+                        @if (isset($comments['root']))
+                            @include ('comments.list', ['collection' => $comments['root']])
+                        @endif
                     </div>
                 </div>
             </div>

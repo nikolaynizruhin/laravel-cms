@@ -5,9 +5,9 @@
         </a>
     </div>
     <div class="media-body">
-        <h4 class="media-heading">
+        <h5 class="media-heading">
             <a href="{{ url('/users/' . $comment->owner->id) }}">{{ $comment->owner->name }}</a> said...
-        </h4>
+        </h5>
 
         {{ $comment->body }}
 
