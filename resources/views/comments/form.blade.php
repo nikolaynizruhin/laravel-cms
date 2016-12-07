@@ -9,5 +9,5 @@
         <textarea class="form-control" rows="2" name="body" required></textarea>
     </div>
 
-    <button type="submit" class="btn btn-default">Reply</button>
+    <button type="submit" class="btn btn-default btn-sm">Reply</button>
 </form>

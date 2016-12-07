@@ -6,7 +6,8 @@
     </div>
     <div class="media-body">
         <h5 class="media-heading">
-            <a href="{{ url('/users/' . $comment->owner->id) }}">{{ $comment->owner->name }}</a> said...
+            <a href="{{ url('/users/' . $comment->owner->id) }}">{{ $comment->owner->name }}</a>
+            &bull; {{ $comment->created_at->diffForHumans() }}
         </h5>
 
         {{ $comment->body }}

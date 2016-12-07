@@ -34,7 +34,16 @@
 
                     <div class="panel-body">
                         @if (Auth::check())
-                            @include ('comments.form')
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="{{ url('/users/' . Auth::user()->id) }}">
+                                        <img class="media-object img-thumbnail" width="64" height="64" src="{{ url('/uploads/avatars/' . Auth::user()->avatar) }}" alt="avatar">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    @include ('comments.form')
+                                </div>
+                            </div>
                         @endif
 
                         @if (isset($comments['root']))
