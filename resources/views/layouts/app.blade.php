@@ -46,7 +46,16 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
-
+                    <form class="navbar-form navbar-left" method="GET" action="/search">
+                        <div class="input-group">
+                            <input type="search" name="q" class="form-control" placeholder="Search">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
