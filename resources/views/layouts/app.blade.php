@@ -48,7 +48,7 @@
                     </ul>
                     <form class="navbar-form navbar-left" method="GET" action="/search">
                         <div class="input-group">
-                            <input type="search" name="q" class="form-control" placeholder="Search">
+                            <input type="search" name="q" class="form-control" placeholder="Search" required>
                             <span class="input-group-btn">
                                 <button type="submit" class="btn btn-default">
                                     <i class="fa fa-search" aria-hidden="true"></i>

@@ -36,3 +36,5 @@ Route::resource('tags', 'TagController', ['only' => [
 Route::resource('categories', 'CategoryController', ['only' => [
     'show', 'store', 'destroy'
 ]]);
+
+Route::get('search', 'PostController@search');

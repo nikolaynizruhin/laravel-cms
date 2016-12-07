@@ -150,4 +150,21 @@ class PostController extends Controller
 
         return redirect('/home');
     }
+
+    /**
+     * Search the post.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $posts =  Post::search($request->q)->paginate(5);
+
+        $categories = Category::all();
+
+        $tags = Tag::all();
+
+        return view('posts.index', compact('posts', 'categories', 'tags'));
+    }
 }
