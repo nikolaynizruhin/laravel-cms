@@ -6,7 +6,7 @@
     @endif
 
     <div class="form-group">
-        <textarea class="form-control" rows="2" name="body" required></textarea>
+        <textarea class="form-control" rows="2" name="body" placeholder="Leave a reply..." required></textarea>
     </div>
 
     <button type="submit" class="btn btn-default btn-sm">Reply</button>

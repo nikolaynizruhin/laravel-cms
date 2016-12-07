@@ -24,7 +24,7 @@
 
                     <div class="panel-body">
                         {!! $post->body !!}
-                        <hr>
+                        <br>
                         @include ('tags.list')
                     </div>
                 </div>
