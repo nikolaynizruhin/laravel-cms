@@ -14,6 +14,9 @@
                             </div>
 
                             <div class="col-md-9">
+                                <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
+                                <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+                                <p><strong>Join: </strong> {{ Auth::user()->created_at->toFormattedDateString() }}</p>
                                 <form enctype="multipart/form-data" method="POST" action="/profile">
                                     {{ csrf_field() }}
                                     <div class="form-group">
