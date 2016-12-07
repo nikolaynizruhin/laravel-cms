@@ -1,4 +1,4 @@
-# Laravel 5.3 Blog
+# Laravel 5.3 CMS
 ### Features:
 - CRUD Posts
 - Full-text search
