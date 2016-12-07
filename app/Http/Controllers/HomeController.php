@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Auth::user()->posts;
+        $posts = Auth::user()->posts()->paginate(5);
 
         $categories = Category::all();
 

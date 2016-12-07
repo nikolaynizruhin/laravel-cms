@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-
-            @include ('partials.posts')
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-2">
+        <div class="col-md-3">
 
             @include ('partials.categories')
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
+
+            @include ('partials.posts')
+
+            {{ $posts->links() }}
+
+        </div>
+        <div class="col-md-3">
 
             @include ('partials.tags')
 
