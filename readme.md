@@ -6,6 +6,7 @@
 - Nested comments
 - Tags
 - Pagination
+- Admin panel
 - Authorization
 - Authentication
 - User avatar
