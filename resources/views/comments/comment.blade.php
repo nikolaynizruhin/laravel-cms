@@ -7,6 +7,12 @@
     <div class="media-body">
         <h5 class="media-heading">
             <a href="{{ url('/users/' . $comment->owner->id) }}">{{ $comment->owner->name }}</a>
+            @if ($comment->parent_id)
+                <i class="fa fa-share" aria-hidden="true"></i>
+                <a href="{{ url('/users/' . App\Comment::find($comment->parent_id)->owner->id) }}">
+                    {{ App\Comment::find($comment->parent_id)->owner->name }}
+                </a>
+            @endif
             &bull; {{ $comment->created_at->diffForHumans() }}
         </h5>
 
