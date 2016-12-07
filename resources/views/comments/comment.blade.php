@@ -9,7 +9,7 @@
             <a href="{{ url('/users/' . $comment->owner->id) }}">{{ $comment->owner->name }}</a>
             @if ($comment->parent_id)
                 <i class="fa fa-share" aria-hidden="true"></i>
-                <a href="{{ url('/users/' . App\Comment::find($comment->parent_id)->owner->id) }}">
+                <a href="{{ url('/users/' . App\Comment::find($comment->parent_id)->owner->id) }}" style="color: inherit">
                     {{ App\Comment::find($comment->parent_id)->owner->name }}
                 </a>
             @endif
