@@ -21,7 +21,6 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Created</th>
                 <th>Delete</th>
             </tr>
             </thead>
@@ -32,9 +31,6 @@
                     </td>
                     <td>
                         {{ $tag->name }}
-                    </td>
-                    <td>
-                        {{ $tag->created_at }}
                     </td>
                     <td>
                         <form action="{{ url('/tags/' . $tag->id) }}" method="POST">

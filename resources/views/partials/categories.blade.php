@@ -22,7 +22,6 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Created</th>
                 <th>Delete</th>
             </tr>
             </thead>
@@ -33,9 +32,6 @@
                     </td>
                     <td>
                         {{ $category->name }}
-                    </td>
-                    <td>
-                        {{ $category->created_at }}
                     </td>
                     <td>
                         <form action="{{ url('/categories/' . $category->id) }}" method="POST">
