@@ -9,32 +9,17 @@ class DashboardAccessTest extends TestCase
     use DatabaseTransactions;
 
     /**
-     * Instance of User class.
-     *
-     * @var
-     */
-    private $user;
-
-    /**
-     * Set a user.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-
-        $this->user = factory(App\User::class)->create();
-    }
-
-    /**
      * Test user can visit home page.
      *
      * @return void
      */
     public function test_user_can_visit_home_page()
     {
-        $this->actingAs($this->user)
+        $user = factory(App\User::class)->create();
+
+        $this->actingAs($user)
             ->visit('/home')
-            ->see($this->user->name)
+            ->see($user->name)
             ->see('Posts');
     }
 }
