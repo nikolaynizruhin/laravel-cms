@@ -2,11 +2,12 @@
 ### Features:
 - CRUD Posts
 - Full-text search
-- Categories
 - Nested comments
+- Categories
 - Tags
 - Pagination
 - Admin panel
 - Authorization
 - Authentication
 - User avatar
+- Tests
