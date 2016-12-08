@@ -66,6 +66,6 @@ class UserController extends Controller
             $user->save();
         }
 
-        return view('profile');
+        return redirect('profile')->with('status', 'Profile avatar updated!');
     }
 }

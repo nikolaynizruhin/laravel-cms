@@ -21,6 +21,6 @@ class AvatarUploadTest extends TestCase
              ->visit('/profile')
              ->attach(public_path('/uploads/avatars/default.jpg'), 'avatar')
              ->press('Submit')
-             ->see($user->name . '`s Profile');
+             ->see('Profile avatar updated!');
     }
 }

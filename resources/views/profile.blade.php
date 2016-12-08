@@ -14,6 +14,11 @@
                             </div>
 
                             <div class="col-md-9">
+                                @if (session('status'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
                                 <p><strong>Name:</strong> {{ Auth::user()->name }}</p>
                                 <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
                                 <p><strong>Join: </strong> {{ Auth::user()->created_at->toFormattedDateString() }}</p>
