@@ -20,7 +20,7 @@ class AvatarUploadTest extends TestCase
         $this->actingAs($user)
              ->visit('/profile')
              ->attach(public_path('/uploads/avatars/default.jpg'), 'avatar')
-             ->press('Submit')
+             ->press('Update')
              ->see('Profile avatar updated!');
     }
 }

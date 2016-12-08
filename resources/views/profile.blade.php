@@ -28,7 +28,7 @@
                                         <label for="file">Update Profile Image</label>
                                         <input type="file" name="avatar" id="file">
                                     </div>
-                                    <button type="submit" class="pull-right btn btn-default btn-sm">Submit</button>
+                                    <button type="submit" class="pull-right btn btn-default btn-sm">Update</button>
                                 </form>
                             </div>
                         </div>
