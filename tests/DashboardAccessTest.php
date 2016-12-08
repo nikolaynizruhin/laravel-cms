@@ -4,7 +4,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class UserTest extends TestCase
+class DashboardAccessTest extends TestCase
 {
     use DatabaseTransactions;
 
@@ -35,8 +35,6 @@ class UserTest extends TestCase
         $this->actingAs($this->user)
             ->visit('/home')
             ->see($this->user->name)
-            ->see('Posts')
-            ->see('Tags')
-            ->see('Categories');
+            ->see('Posts');
     }
 }
