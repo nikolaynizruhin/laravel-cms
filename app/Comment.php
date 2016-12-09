@@ -20,6 +20,13 @@ class Comment extends Model
     ];
 
     /**
+     * All of the relationships to be touched.
+     *
+     * @var array
+     */
+    protected $touches = ['post'];
+
+    /**
      * A comment has an owner.
      *
      * @return BelongsTo
@@ -27,6 +34,16 @@ class Comment extends Model
     public function owner()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * A comment belongs to post.
+     *
+     * @return BelongsTo
+     */
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
     }
 
     /**
