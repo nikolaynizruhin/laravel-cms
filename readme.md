@@ -10,6 +10,7 @@
 - Pagination
 - Database seeding
 - Tests
+
 ## Usage
 ### Step 1: Add to .env
 `SCOUT_DRIVER=tntsearch`
