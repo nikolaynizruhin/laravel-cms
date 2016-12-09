@@ -57,6 +57,16 @@ class Comment extends Model
     }
 
     /**
+     * Verify if comment has children.
+     *
+     * @return bool
+     */
+    public function hasChildren()
+    {
+        return ! $this->children->isEmpty();
+    }
+
+    /**
      * A comment has a parent comment.
      *
      * @return BelongsTo
