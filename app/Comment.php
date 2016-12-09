@@ -30,6 +30,26 @@ class Comment extends Model
     }
 
     /**
+     * A comment has a children comments.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function children()
+    {
+        return $this->hasMany(Comment::class, 'parent_id');
+    }
+
+    /**
+     * A comment has a parent comment.
+     *
+     * @return BelongsTo
+     */
+    public function parent()
+    {
+        return $this->belongsTo(Comment::class, 'parent_id');
+    }
+
+    /**
      * Use a custom collection for all comments.
      *
      * @param  array  $models
