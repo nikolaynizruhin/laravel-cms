@@ -44,6 +44,6 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         },
         'title' => $faker->sentence(),
         'excerpt' => $faker->paragraph,
-        'body' => $faker->text(1000),
+        'body' => $faker->text(2000),
     ];
 });
