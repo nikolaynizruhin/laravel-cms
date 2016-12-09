@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +33,8 @@ class HomeController extends Controller
 
         $tags = Tag::all();
 
-        return view('home', compact('posts', 'categories', 'tags'));
+        $comments = Comment::all();
+
+        return view('home', compact('posts', 'categories', 'tags', 'comments'));
     }
 }

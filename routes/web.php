@@ -23,6 +23,8 @@ Route::resource('posts', 'PostController');
 
 Route::post('posts/{post}/comments', 'PostController@addComment');
 
+Route::delete('comments/{comment}', 'CommentController@destroy');
+
 Route::get('users/{user}', 'UserController@show');
 
 Route::get('profile', 'UserController@profile');
