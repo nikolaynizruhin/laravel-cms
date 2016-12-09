@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('post_id')->unsigned();
-            $table->integer('parent_id')->index()->nullable();
+            $table->integer('parent_id')->unsigned()->nullable();
             $table->text('body');
             $table->timestamps();
 
@@ -27,6 +27,10 @@ class CreateCommentsTable extends Migration
 
             $table->foreign('post_id')
                 ->references('id')->on('posts')
+                ->onDelete('cascade');
+
+            $table->foreign('parent_id')
+                ->references('id')->on('comments')
                 ->onDelete('cascade');
         });
     }
@@ -41,6 +45,7 @@ class CreateCommentsTable extends Migration
         Schema::table('comments', function (Blueprint $table) {
            $table->dropForeign('comments_user_id_foreign');
            $table->dropForeign('comments_post_id_foreign');
+           $table->dropForeign('comments_parent_id_foreign');
         });
 
         Schema::dropIfExists('comments');
